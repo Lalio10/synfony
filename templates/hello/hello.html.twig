@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <!doctype html>
+    <html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <title>Page personnelle d'Olivier Nocent</title>
+    <style>
+      body {
+          color: #AE562B;
+          font-family: sans-serif;
+      }
+
+      #portrait {
+          float: left;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Page personnelle d'Olivier Nocent</h1>
+      <p>Enseignant-chercheur en informatique</p>
+    </header>
+    <div role="main">
+      <img id="portrait" src="" alt="Portrait d'Olivier Nocent">
+      <p>
+      </p>
+    </div>
+  </body>
+</html>
+{% endblock %}
+
+{% block title %}
+{name}
+{% endblock %}
+
