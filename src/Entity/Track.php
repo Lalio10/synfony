@@ -5,7 +5,7 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Track
+ * Track.
  *
  * @ORM\Table(name="track", indexes={@ORM\Index(name="number", columns={"number"}), @ORM\Index(name="album", columns={"album"}), @ORM\Index(name="song", columns={"song"})})
  * @ORM\Entity
@@ -19,7 +19,7 @@ class Track
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="NONE")
      */
-    private $number = '0';
+    private $number = 0;
 
     /**
      * @var int
@@ -28,17 +28,17 @@ class Track
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="NONE")
      */
-    private $disknumber = '0';
+    private $disknumber = 0;
 
     /**
      * @var int|null
      *
      * @ORM\Column(name="duration", type="integer", nullable=true, options={"comment"="Durée en secondes"})
      */
-    private $duration = '0';
+    private $duration = 0;
 
     /**
-     * @var \Album
+     * @var Album
      *
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="NONE")
@@ -50,7 +50,7 @@ class Track
     private $album;
 
     /**
-     * @var \Song
+     * @var Song
      *
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="NONE")
@@ -61,5 +61,47 @@ class Track
      */
     private $song;
 
+    public function getNumber(): int
+    {
+        return $this->number;
+    }
 
+    public function getDisknumber(): int
+    {
+        return $this->disknumber;
+    }
+
+    public function getDuration(): int
+    {
+        return $this->duration;
+    }
+
+    public function setDuration(?int $duration): self
+    {
+        $this->duration = $duration;
+
+        return $this;
+    }
+
+    public function getAlbum(): Album
+    {
+        return $this->album;
+    }
+
+    public function setAlbum(Album $album): self
+    {
+        $this->album = $album;
+
+        return $this;
+    }
+
+    public function getSong(): Song
+    {
+        return $this->song;
+    }
+
+    public function setSong(Song $song): self
+    {
+        return $this->song = $song;
+    }
 }
