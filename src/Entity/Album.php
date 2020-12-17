@@ -65,5 +65,66 @@ class Album
      */
     private $cover;
 
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
+    public function setName(string $name): self
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    public function getYear(): int
+    {
+        return $this->year;
+    }
+
+    public function setYear(int $year): int
+    {
+        return $this->year = $year;
+    }
+
+    public function getGenre(): Genre
+    {
+        return $this->genre;
+    }
+
+    public function setGenre(Genre $genre): self
+    {
+        $this->genre = $genre;
+
+        return $this;
+    }
+
+    public function getArtist(): Artist
+    {
+        return $this->artist;
+    }
+
+    public function setArtist(Artist $artist): self
+    {
+        $this->artist = $artist;
+
+        return $this;
+    }
+
+    public function getCover(): Cover
+    {
+        return $this->cover;
+    }
+
+    public function setCover(Cover $cover): self
+    {
+        return $this->cover = $cover;
+    }
+
 
 }
