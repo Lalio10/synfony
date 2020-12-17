@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    List album à artiste
+{% endblock %}
+
+{% block body %}
+
+    <h1>
+        Album de {{ artist.name }}
+    </h1>
+    {#
+
+        <ul>
+            <li>
+                {{ album.artist.name}}
+            </li>
+        </ul>
+    #}
+    <h1>
+        Album de {{ artist.name }}
+    </h1>
+
+    <ul>
+        {% if artist.albums  %}
+            <li > Aucun album </li>
+
+        {% else %}
+            {% for album in artist.albums %}
+                <li > <a href="{{ path("tracks", {id: albums.id}) }}">{{ album.name }} </a></li>
+            {% endfor %}
+        {% endif %}
+
+
+
+{% endblock %}
+
