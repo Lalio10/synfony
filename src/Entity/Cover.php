@@ -28,5 +28,22 @@ class Cover
      */
     private $jpeg;
 
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
+
+    public function getJpeg()
+    {
+        return $this->jpeg;
+    }
+
+    public function setJpeg($jpeg): self
+    {
+        $this->jpeg = $jpeg;
+
+        return $this;
+    }
+
 
 }

@@ -5,11 +5,11 @@
 {% endblock %}
 
 {% block body %}
-
+    {#
     <h1>
         Album de {{ artist.name }}
     </h1>
-    {#
+
 
         <ul>
             <li>
@@ -17,10 +17,27 @@
             </li>
         </ul>
     #}
+    {%  for art in artist %}
+
     <h1>
-        Album de {{ artist.name }}
+        Album de {{ art.name }}
     </h1>
 
+    {% if art.albums.count !=0 %}
+    <ul>
+        {% for alb in art.albums.values %}
+        <li>
+            {{ alb.name  }}
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+        <ul>
+            <li > Aucun album </li>
+        </ul>
+    {% endif %}
+    {% endfor %}
+    {#
     <ul>
         {% if artist.albums  %}
             <li > Aucun album </li>
@@ -29,9 +46,5 @@
             {% for album in artist.albums %}
                 <li > <a href="{{ path("tracks", {id: albums.id}) }}">{{ album.name }} </a></li>
             {% endfor %}
-        {% endif %}
-
-
-
+        {% endif %#}
 {% endblock %}
-

@@ -48,7 +48,7 @@ class Album
     /**
      * @var \Artist
      *
-     * @ORM\ManyToOne(targetEntity="Artist")
+     * @ORM\ManyToOne(targetEntity="Artist", inversedBy="albums" )
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="artist", referencedColumnName="id")
      * })

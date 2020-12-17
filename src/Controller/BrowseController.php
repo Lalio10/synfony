@@ -32,7 +32,7 @@ class BrowseController extends AbstractController
     {
         $artist = $this->getDoctrine()
             ->getRepository(Artist::class)
-            ->find($artistId);
+            ->findBy(['id' => $artistId]);
 
         return $this->render('browse/albums.html.twig', [
             'artist' => $artist,
